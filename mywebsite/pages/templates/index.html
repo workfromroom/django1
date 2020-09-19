@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} My Home Page {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a>
+    <h1>Home Page</h1>
+    <p>Ini adalah Halaman Home </p>
+</body>
+</html>
+{% endblock %}
