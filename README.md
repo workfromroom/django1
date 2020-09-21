@@ -148,5 +148,65 @@ Langkah2 memulai project django:
         <a href="{%url 'about'%}" class="btn btn-primary">About Page</a>
       </div>
     </div>
-
+55. Tambahkan kode sbb di bawah kode {% extends 'base.html' %} pada file index.html:
+    {%load static%}
+56. Tambahkan 3 gambar di dalam folder images
+57. Copy kode template Carousel pada website https://getbootstrap.com/docs/4.5/components/carousel/
+58. Paste kode template Carousel tsb pada pada file about.html di dalam folder templates di bawah tag body:
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+59. Update kode template Carousel sbb:
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{%static 'images/1.jpg'%}" class="d-block w-100" alt="1">
+        </div>
+        <div class="carousel-item">
+          <img src="{%static 'images/2.jpg'%}" class="d-block w-100" alt="2">
+        </div>
+        <div class="carousel-item">
+          <img src="{%static 'images/3.jpg'%}" class="d-block w-100" alt="3">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+60. Tambahkan kode sbb di bawah kode {% extends 'base.html' %} pada file about.html:
+    {%load static%}
     
+----------------------FINISHED---------------------------
