@@ -88,4 +88,65 @@ Langkah2 memulai project django:
     {% block title %} My Home Page {% endblock %}
 30. Tambahkan Kode HTML di bawah ini di bawah kode {% extends 'base.html' %} pada file about.html:
     {% block title %} About Ragowo {% endblock %}
-Stop di video 16
+31. Copy template navbar yang ada di web https://getbootstrap.com/docs/4.5/components/navbar/
+32. Paste template navbar tsb di bawah tag body di dalam file base.html
+33. Beri Tag comment pada <form class="form-inline my-2 my-lg-0"> </form> pada file base.html
+34. Beri Tag comment pada <li class="nav-item"></li> pada file base.html
+35. Beri Tag comment pada <li class="nav-item dropdown"></li> pada file base.html
+36. Beri Tag comment pada <li class="nav-item active"></li> pada file base.html
+37. Tambahkan kode sbb di bawah tag </nav>:
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+38. Update kode sbb di bawah tag <nav class="navbar navbar-expand-lg navbar-light bg-light"> pada file base.html :
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+39. Update kode sbb di bawah tag <li class="nav-item"> pada file base.html :
+    <a class="nav-link" href="{% url 'about' %}">About</a>
+40. Hapus tag <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a> pada file index.html & about.html
+41. Tambahkan kode html sbb di atas tag <!-- Optional JavaScript -->
+    <br><br><br>
+    <center><small>Copyright &copy; Ragowo - All Rights Reserved</small></center>
+42. Tambahkan & update kode python pada file views di dalam folder page sbb:
+    my_name = "Halo, nama saya adalah Ragowo"
+    return render(request,"about.html",{"my_name":my_name}) 
+43. Tambahkan kode sbb pada about.html di bawah tag <p>Ini adalah Halaman About </p> di dalam folder templates:
+    {{my_name}}
+44. Buat file baru di dalam folder pages dengan nama namer.py
+45. Tambahkan kode python sbb di dalam file namer.py
+    def name():
+    return "Ini adalah Website Ragowo"
+46. Update kode python sbb pada file views.py di dalam folder pages:
+    def home(request):
+    from pages.namer import namer
+    return render(request,"index.html",{"namer":namer})
+47. Tambahkan kode sbb pada index.html di bawah tag <p>Ini adalah Halaman Home </p> di dalam folder templates:
+    {{namer}}
+48. Buat folder baru bernama static di dalam folder pages
+49. Buat folder baru bernama images di dalam folder static
+50. Tambahkan foto bertipe jpeg di dalam folder images
+51. Tambahkan kode sbb pada file setting.py di posisi paling bawah di dalam folder mywebsite:
+    STATICFILES_DIRS = [
+        BASE_DIR.joinpath('static')
+        ]
+52. Copy kode template card dari https://getbootstrap.com/docs/4.5/components/card/
+53. Paste kode template card tsb pada pada file index.html di dalam folder templates di bawah {{namer}}:
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+54. Update kode template card tsb sbb :
+    <div class="card" style="width: 18rem;">
+      <img src="{%static 'images/pesawat.jpg'%}" class="card-img-top" alt="About">
+      <div class="card-body">
+        <h5 class="card-title">About</h5>
+        <p class="card-text">About Me</p>
+        <a href="{%url 'about'%}" class="btn btn-primary">About Page</a>
+      </div>
+    </div>
+
+    
